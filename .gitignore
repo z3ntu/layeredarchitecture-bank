@@ -1,0 +1,10 @@
+### Gradle ###
+.gradle
+**/build/
+
+### IntelliJ ###
+.idea/
+out/
+
+### Library which is only downloadable with a login ###
+lib/ojdbc8-12.2.0.1.jar

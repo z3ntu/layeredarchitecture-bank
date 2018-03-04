@@ -1,0 +1,41 @@
+buildscript {
+    ext.kotlin_version = '1.2.30'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'at.spengergasse.weiss'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://www.oracle.com/content/secure/maven/content"
+        credentials {
+            username 'pedro@zippymail.info'
+            password 'Croquete21'
+        }
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    //compile "com.oracle.jdbc:ojdbc8:12.2.0.0"
+    // Download the file from https://www.oracle.com/content/secure/maven/content/com/oracle/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar
+    // You can log-in with the credentials above which are from bugmenot.com
+    compile files('lib/ojdbc8-12.2.0.1.jar')
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
