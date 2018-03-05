@@ -116,5 +116,6 @@ fun promptShowHistory(dbWrapper: DBWrapper) {
                 "|" + it.amount.toString().padEnd(6) + "|")
 
     }
+    println("|----|----|----------|------|")
 
 }
